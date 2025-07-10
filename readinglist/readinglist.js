@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     readingItems.forEach(item => {
         const header = item.querySelector('h3');
         
+        // Set collapsed as default
+        item.classList.add('collapsed');
+        
         header.addEventListener('click', function() {
             // Toggle collapsed class
             item.classList.toggle('collapsed');
@@ -26,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Make headers focusable for accessibility
         header.setAttribute('tabindex', '0');
         header.setAttribute('role', 'button');
-        header.setAttribute('aria-expanded', 'true');
+        header.setAttribute('aria-expanded', 'false'); // Default to collapsed
         
         // Update aria-expanded when collapsed state changes
         const observer = new MutationObserver(function(mutations) {
