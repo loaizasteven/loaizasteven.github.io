@@ -23,6 +23,8 @@ nav.sidebar {
     bottom: 0;
     transition: width 0.3s;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 nav.sidebar.collapsed {
@@ -35,6 +37,7 @@ nav.sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-top: 2rem; /* Push navigation content down */
 }
 
 nav.sidebar li {
@@ -52,6 +55,20 @@ nav.sidebar a {
 
 nav.sidebar a:hover {
     color: #0072b1;
+}
+
+/* Active sidebar link */
+nav.sidebar a.active {
+    color: #1abc9c !important;
+    background: rgba(26,188,156,0.1);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+/* Hide active styling when sidebar is collapsed */
+nav.sidebar.collapsed a.active {
+    background: transparent;
+    padding: 0;
 }
 
 /* Sidebar Toggle */
