@@ -12,21 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     const toggleBtn = document.getElementById('sidebarToggle');
     const labels = sidebar.querySelectorAll('.sidebar-label');
-    const icons = sidebar.querySelectorAll('.sidebar-icon');
 
     function setCollapsed(collapsed) {
         if (collapsed) {
             sidebar.classList.add('collapsed');
             labels.forEach(label => label.style.display = 'none');
-            icons.forEach(icon => icon.style.display = 'inline');
         } else {
             sidebar.classList.remove('collapsed');
             labels.forEach(label => label.style.display = 'inline');
-            icons.forEach(icon => icon.style.display = 'none');
         }
     }
 
-    let collapsed = false;
+    // Set initial collapsed state
+    let collapsed = true;
+    setCollapsed(collapsed);
+    
     toggleBtn.addEventListener('click', () => {
         collapsed = !collapsed;
         setCollapsed(collapsed);
