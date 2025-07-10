@@ -1,0 +1,207 @@
+/* Reading List Specific Styles */
+
+/* Topic Sections */
+.topic-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.topic-section:last-child {
+    border-bottom: none;
+}
+
+.topic-section h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+}
+
+.topic-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Reading Items */
+.reading-items {
+    display: grid;
+    gap: 2rem;
+}
+
+.reading-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reading-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.reading-item h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.reading-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reading-item li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    transition: border-color 0.2s ease;
+}
+
+.reading-item li:hover {
+    border-color: #3498db;
+}
+
+.reading-item li:last-child {
+    margin-bottom: 0;
+}
+
+.reading-item a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.reading-item a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* Item Type Tags */
+.item-type {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.item-type:nth-of-type(1) { background: #e74c3c; } /* Red for Papers */
+.item-type:nth-of-type(2) { background: #f39c12; } /* Orange for Books */
+.item-type:nth-of-type(3) { background: #27ae60; } /* Green for Frameworks */
+.item-type:nth-of-type(4) { background: #8e44ad; } /* Purple for Guides */
+
+/* Different colors for different types */
+.reading-item li:nth-child(even) .item-type {
+    background: #16a085;
+}
+
+.reading-item li:nth-child(3n) .item-type {
+    background: #d35400;
+}
+
+.reading-item li:nth-child(4n) .item-type {
+    background: #7f8c8d;
+}
+
+.reading-item p {
+    margin: 0.5rem 0 0 0;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Header Navigation */
+.header-nav {
+    margin-top: 1rem;
+}
+
+.header-nav a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    transition: background 0.2s ease;
+}
+
+.header-nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Active sidebar link */
+.sidebar a.active {
+    color: #1abc9c !important;
+    background: rgba(26,188,156,0.1);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topic-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .reading-item {
+        padding: 1rem;
+    }
+    
+    .topic-description {
+        font-size: 1rem;
+    }
+}
+
+/* Smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Table of Contents (if we want to add one later) */
+.toc {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.toc h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
