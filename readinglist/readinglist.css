@@ -51,6 +51,41 @@
     color: #2c3e50;
     margin-bottom: 1rem;
     font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.reading-item h3:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.reading-item h3::after {
+    content: '▼';
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+    color: #3498db;
+}
+
+.reading-item.collapsed h3::after {
+    transform: rotate(-90deg);
+}
+
+.reading-item-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.reading-item.collapsed .reading-item-content {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
 }
 
 .reading-item ul {
@@ -172,6 +207,36 @@
 /* Smooth scroll for anchor links */
 html {
     scroll-behavior: smooth;
+}
+
+/* Reading Controls */
+.reading-controls {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 8px;
+}
+
+.control-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.control-btn:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+.control-btn:active {
+    transform: translateY(0);
 }
 
 /* Table of Contents (if we want to add one later) */
