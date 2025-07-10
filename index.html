@@ -2,156 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Loaiza</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f7f7f7;
-            color: #222;
-            display: flex;
-            min-height: 100vh;
-        }
-        nav.sidebar {
-            width: 200px;
-            background: #7e7878;
-            color: #fff;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-            box-sizing: border-box;
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            transition: width 0.3s;
-            overflow-x: hidden;
-        }
-        nav.sidebar.collapsed {
-            width: 60px;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-        nav.sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav.sidebar li {
-            margin-bottom: 1.5rem;
-            white-space: nowrap;
-        }
-        nav.sidebar a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-        nav.sidebar a:hover {
-            color: #0072b1;
-        }
-        .content-wrapper {
-            margin-left: 200px;
-            width: 100%;
-            transition: margin-left 0.3s;
-        }
-        nav.sidebar.collapsed ~ .content-wrapper {
-            margin-left: 60px;
-        }
-        .sidebar-toggle {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 2;
-            outline: none;
-        }
-        nav.sidebar.collapsed .sidebar-label {
-            display: none;
-        }
-        nav.sidebar.collapsed ul li {
-            text-align: center;
-        }
-        nav.sidebar.collapsed ul li a {
-            font-size: 1.3rem;
-        }
-        header {
-            background: #222;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        main {
-            max-width: 700px;
-            margin: 2rem auto;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        }
-        h1 {
-            margin: 0 0 0.5rem 0;
-            font-size: 2.5rem;
-        }
-        h2 {
-            margin-top: 2rem;
-            color: #444;
-        }
-        .social {
-            margin-top: 1rem;
-        }
-        .social a {
-            margin-right: 1rem;
-            color: #0072b1;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .social a:last-child {
-            margin-right: 0;
-        }
-        footer {
-            text-align: center;
-            color: #888;
-            margin: 2rem 0 1rem 0;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 800px) {
-            nav.sidebar {
-                position: static;
-                width: 100%;
-                min-height: auto;
-                padding: 1rem 0.5rem;
-                text-align: center;
-            }
-            nav.sidebar.collapsed {
-                width: 100%;
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
-            }
-            .content-wrapper,
-            nav.sidebar.collapsed ~ .content-wrapper {
-                margin-left: 0;
-            }
-            main {
-                margin: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
-        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">&#9776;</button>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            &#9776;
+        </button>
         <ul>
-            <li><a href="readinglist/index.html"><span class="sidebar-label">Reading List</span><span class="sidebar-icon" style="display:none;"></span></a></li>
+            <li>
+                <a href="readinglist/index.html">
+                    <span class="sidebar-label">Reading List</span>
+                    <span class="sidebar-icon" style="display:none;"></span>
+                </a>
+            </li>
         </ul>
     </nav>
+
+    <!-- Main Content Wrapper -->
     <div class="content-wrapper">
+        <!-- Header Section -->
         <header>
             <h1 id="top">Steven Loaiza</h1>
             <script>
@@ -169,6 +43,8 @@
                 <a href="">Email</a>
             </div>
         </header>
+
+        <!-- Main Content -->
         <main>
             <h2 id="about">About Me</h2>
             <p>
@@ -185,15 +61,20 @@
                 <li><strong>Proxima AI</strong> - A cutting-edge AI platform for personalized resume building with the use of Multi-Agent Research System.</li>
                 <li><strong>LinguaFuse</strong> - Language understanding framework designed for pre-training and post-training of transformers based architectures for downstream [CLS] tasks and more.</li>
             </ul>
+
             <h2 id="contact">Contact</h2>
             <p>
                 Feel free to reach out via <a href="https://www.linkedin.com/in/stevenloaiza">LinkedIn</a> or connect with me on social media!
             </p>
         </main>
+
+        <!-- Footer -->
         <footer>
             &copy; 2025 Steven Loaiza
         </footer>
     </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
     <script>
         const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.getElementById('sidebarToggle');
