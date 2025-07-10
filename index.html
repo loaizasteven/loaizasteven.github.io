@@ -11,6 +11,75 @@
             padding: 0;
             background: #f7f7f7;
             color: #222;
+            display: flex;
+            min-height: 100vh;
+        }
+        nav.sidebar {
+            width: 200px;
+            background: #7e7878;
+            color: #fff;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            box-sizing: border-box;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            transition: width 0.3s;
+            overflow-x: hidden;
+        }
+        nav.sidebar.collapsed {
+            width: 60px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        nav.sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav.sidebar li {
+            margin-bottom: 1.5rem;
+            white-space: nowrap;
+        }
+        nav.sidebar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav.sidebar a:hover {
+            color: #0072b1;
+        }
+        .content-wrapper {
+            margin-left: 200px;
+            width: 100%;
+            transition: margin-left 0.3s;
+        }
+        nav.sidebar.collapsed ~ .content-wrapper {
+            margin-left: 60px;
+        }
+        .sidebar-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2;
+            outline: none;
+        }
+        nav.sidebar.collapsed .sidebar-label {
+            display: none;
+        }
+        nav.sidebar.collapsed ul li {
+            text-align: center;
+        }
+        nav.sidebar.collapsed ul li a {
+            font-size: 1.3rem;
         }
         header {
             background: #222;
@@ -52,41 +121,100 @@
             margin: 2rem 0 1rem 0;
             font-size: 0.9rem;
         }
+        @media (max-width: 800px) {
+            nav.sidebar {
+                position: static;
+                width: 100%;
+                min-height: auto;
+                padding: 1rem 0.5rem;
+                text-align: center;
+            }
+            nav.sidebar.collapsed {
+                width: 100%;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            .content-wrapper,
+            nav.sidebar.collapsed ~ .content-wrapper {
+                margin-left: 0;
+            }
+            main {
+                margin: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Steven Loaiza</h1>
-        <p>Leading CoreML @ GEICO | LLM | Machine Learning</p>
-        <div class="social">
-            <a href="https://github.com/loaizasteven" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/stevenloaiza" target="_blank">LinkedIn</a>
-            <a href="">Email</a>
-        </div>
-    </header>
-    <main>
-        <h2>About Me</h2>
-        <p>
-            I'm an AI/ML enthusiast with 10 years of hands-on experience building innovative solutions in Machine Learning, NLP, Generative AI, and Computer Vision.
-            <ul>
-                <li><strong>Leadership:</strong> I lead teams to solve real business problems, driving impact—like saving millions and boosting efficiency at GEICO.</li>
-                <li><strong>Expertise:</strong> Skilled in turning ideas into working AI solutions, collaborating across disciplines, and delivering projects end-to-end.</li>
-                <li><strong>Interests:</strong> Practical GenAI, fine-tuning models (CV, SLM, LLM), software engineering, and full-stack ML.</li>
-                <li><strong>Learning:</strong> Currently exploring AWS, Terraform, Multi-Agent Research Systems, Authentication, and React JS Web Applications.</li>
-            </ul>
-        </p>
-        <h2>Projects</h2>
+    <nav class="sidebar" id="sidebar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">&#9776;</button>
         <ul>
-            <li><strong>Proxima AI</strong> - A cutting-edge AI platform for personalized resume building with the use of Multi-Agent Research System.</li>
-            <li><strong>LinguaFuse</strong> - Language understanding framework designed for pre-training and post-training of transformers based architectures for downstream [CLS] tasks and more.</li>
+            <li><a href="readinglist.index.html"><span class="sidebar-label">Reading List</span><span class="sidebar-icon" style="display:none;"></span></a></li>
         </ul>
-        <h2>Contact</h2>
-        <p>
-            Feel free to reach out via <a href="https://www.linkedin.com/in/stevenloaiza">LinkedIn</a> or connect with me on social media!
-        </p>
-    </main>
-    <footer>
-        &copy; 2025 Steven Loaiza
-    </footer>
+    </nav>
+    <div class="content-wrapper">
+        <header>
+            <h1>Steven Loaiza</h1>
+            <p>Leading CoreML @ GEICO | LLM | Machine Learning</p>
+            <div class="social">
+                <a href="https://github.com/loaizasteven" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/stevenloaiza" target="_blank">LinkedIn</a>
+                <a href="">Email</a>
+            </div>
+        </header>
+        <main>
+            <h2 id="about">About Me</h2>
+            <p>
+                I'm an AI/ML enthusiast with 10 years of hands-on experience building innovative solutions in Machine Learning, NLP, Generative AI, and Computer Vision.
+                <ul>
+                    <li><strong>Leadership:</strong> I lead teams to solve real business problems, driving impact—like saving millions and boosting efficiency at GEICO.</li>
+                    <li><strong>Expertise:</strong> Skilled in turning ideas into working AI solutions, collaborating across disciplines, and delivering projects end-to-end.</li>
+                    <li><strong>Interests:</strong> Practical GenAI, fine-tuning models (CV, SLM, LLM), software engineering, and full-stack ML.</li>
+                    <li><strong>Learning:</strong> Currently exploring AWS, Terraform, Multi-Agent Research Systems, Authentication, and React JS Web Applications.</li>
+                </ul>
+            </p>
+            <h2 id="projects">Projects</h2>
+            <ul>
+                <li><strong>Proxima AI</strong> - A cutting-edge AI platform for personalized resume building with the use of Multi-Agent Research System.</li>
+                <li><strong>LinguaFuse</strong> - Language understanding framework designed for pre-training and post-training of transformers based architectures for downstream [CLS] tasks and more.</li>
+            </ul>
+            <h2 id="contact">Contact</h2>
+            <p>
+                Feel free to reach out via <a href="https://www.linkedin.com/in/stevenloaiza">LinkedIn</a> or connect with me on social media!
+            </p>
+        </main>
+        <footer>
+            &copy; 2025 Steven Loaiza
+        </footer>
+    </div>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const labels = sidebar.querySelectorAll('.sidebar-label');
+        const icons = sidebar.querySelectorAll('.sidebar-icon');
+
+        function setCollapsed(collapsed) {
+            if (collapsed) {
+                sidebar.classList.add('collapsed');
+                labels.forEach(label => label.style.display = 'none');
+                icons.forEach(icon => icon.style.display = 'inline');
+            } else {
+                sidebar.classList.remove('collapsed');
+                labels.forEach(label => label.style.display = 'inline');
+                icons.forEach(icon => icon.style.display = 'none');
+            }
+        }
+
+        let collapsed = false;
+        toggleBtn.addEventListener('click', () => {
+            collapsed = !collapsed;
+            setCollapsed(collapsed);
+        });
+
+        // Optional: collapse sidebar by default on small screens
+        if (window.innerWidth < 800) {
+            setCollapsed(true);
+            collapsed = true;
+        }
+    </script>
 </body>
 </html>
