@@ -153,7 +153,15 @@
     </nav>
     <div class="content-wrapper">
         <header>
-            <h1>Steven Loaiza</h1>
+            <h1 id="top">Steven Loaiza</h1>
+            <script>
+                if ('scrollRestoration' in history) {
+                    history.scrollRestoration = 'manual';
+                }
+                window.onbeforeunload = function () {
+                    window.scrollTo(0, 0);
+                };
+            </script>
             <p>Leading CoreML @ GEICO | LLM | Machine Learning</p>
             <div class="social">
                 <a href="https://github.com/loaizasteven" target="_blank">GitHub</a>
