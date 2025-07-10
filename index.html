@@ -28,14 +28,6 @@
         <!-- Header Section -->
         <header>
             <h1 id="top">Steven Loaiza</h1>
-            <script>
-                if ('scrollRestoration' in history) {
-                    history.scrollRestoration = 'manual';
-                }
-                window.onbeforeunload = function () {
-                    window.scrollTo(0, 0);
-                };
-            </script>
             <p>Leading CoreML @ GEICO | LLM | Machine Learning</p>
             <div class="social">
                 <a href="https://github.com/loaizasteven" target="_blank">GitHub</a>
@@ -74,36 +66,7 @@
         </footer>
     </div>
 
-    <!-- JavaScript for Sidebar Toggle -->
-    <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('sidebarToggle');
-        const labels = sidebar.querySelectorAll('.sidebar-label');
-        const icons = sidebar.querySelectorAll('.sidebar-icon');
-
-        function setCollapsed(collapsed) {
-            if (collapsed) {
-                sidebar.classList.add('collapsed');
-                labels.forEach(label => label.style.display = 'none');
-                icons.forEach(icon => icon.style.display = 'inline');
-            } else {
-                sidebar.classList.remove('collapsed');
-                labels.forEach(label => label.style.display = 'inline');
-                icons.forEach(icon => icon.style.display = 'none');
-            }
-        }
-
-        let collapsed = false;
-        toggleBtn.addEventListener('click', () => {
-            collapsed = !collapsed;
-            setCollapsed(collapsed);
-        });
-
-        // Optional: collapse sidebar by default on small screens
-        if (window.innerWidth < 800) {
-            setCollapsed(true);
-            collapsed = true;
-        }
-    </script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
