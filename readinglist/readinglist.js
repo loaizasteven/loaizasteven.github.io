@@ -315,6 +315,12 @@ const readingListData = [
                         'https://github.com/facebookresearch/faiss',
                         'Repository',
                         'Faiss is a library for efficient similarity search and clustering of dense vectors'
+                    ),
+                    createReadingItem(
+                        'Wide & Deep Learning for Recommender Systems (Google Publication)',
+                        'https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf',
+                        'Publication',
+                        'Official Google publication describing the Wide & Deep Learning approach for recommender systems.'
                     )
                 ]
             },
