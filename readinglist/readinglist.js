@@ -1,4 +1,4 @@
-// Reading List Generator - Dynamic Content Management
+// Reading List Generator - Dynamic Content Management v2
 // ===================================================
 // 
 // To add new reading items, simply use this structure:
